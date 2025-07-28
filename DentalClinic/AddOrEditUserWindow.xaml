@@ -1,0 +1,90 @@
+<Window x:Class="DentalClinic.AddOrEditUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Thêm/Sửa người dùng" Height="600" Width="420" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Row 0 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 1 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 2 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 3 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 4 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 5 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 6 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 7 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 8 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 9 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 10 -->
+            <RowDefinition Height="*"/>
+            <!-- Row 11 -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Mã người dùng:" Grid.Row="0" Grid.Column="0" Margin="0,10" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtUserId" Grid.Row="0" Grid.Column="1" Margin="0,10" IsReadOnly="True"/>
+
+        <TextBlock Text="Tên đăng nhập:" Grid.Row="1" Grid.Column="0" Margin="0,10" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtUsername" Grid.Row="1" Grid.Column="1" Margin="0,10"/>
+
+        
+        <!-- Password -->
+        <TextBlock Text="Mật khẩu:" Grid.Row="2" Grid.Column="0" Margin="0,10,0,10" VerticalAlignment="Center"/>
+        <PasswordBox x:Name="txtPassword" Grid.Row="2" Grid.Column="1" Margin="0,10,0,10"/>
+
+        <!-- Full name -->
+        <TextBlock Text="Họ tên:" Grid.Row="3" Grid.Column="0" Margin="0,10,0,10" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtFullName" Grid.Row="3" Grid.Column="1" Margin="0,10,0,10"/>
+
+        <!-- Email -->
+        <TextBlock Text="Email:" Grid.Row="4" Grid.Column="0" Margin="0,10,0,10" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtEmail" Grid.Row="4" Grid.Column="1" Margin="0,10,0,10"/>
+
+        <!-- Phone -->
+        <TextBlock Text="SĐT:" Grid.Row="5" Grid.Column="0" Margin="0,10,0,10" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtPhone" Grid.Row="5" Grid.Column="1" Margin="0,10,0,10"/>
+
+        <!-- Role -->
+        <TextBlock Text="Vai trò:" Grid.Row="6" Grid.Column="0" Margin="0,10,0,10" VerticalAlignment="Center"/>
+        <ComboBox x:Name="cbRole" Grid.Row="6" Grid.Column="1" Margin="0,10,0,10"/>
+
+        <!-- Is Active -->
+        <TextBlock Text="Kích hoạt:" Grid.Row="7" Grid.Column="0" Margin="0,10,0,10" VerticalAlignment="Center"/>
+        <CheckBox x:Name="chkIsActive" Grid.Row="7" Grid.Column="1" Margin="0,10,0,10" Content="Đang hoạt động"/>
+
+        <!-- Gender -->
+        <TextBlock Text="Giới tính:" Grid.Row="8" Grid.Column="0" Margin="0,10,0,10" VerticalAlignment="Center"/>
+        <ComboBox x:Name="cbGender" Grid.Row="8" Grid.Column="1" Margin="0,10,0,10">
+            <ComboBoxItem Content="Nam"/>
+            <ComboBoxItem Content="Nữ"/>
+            <ComboBoxItem Content="Khác"/>
+        </ComboBox>
+
+        <!-- Date of Birth -->
+        <TextBlock Text="Ngày sinh:" Grid.Row="9" Grid.Column="0" Margin="0,10,0,10" VerticalAlignment="Center"/>
+        <DatePicker x:Name="dpDateOfBirth" Grid.Row="9" Grid.Column="1" Margin="0,10,0,10"/>
+
+        <!-- Address -->
+        <TextBlock Text="Địa chỉ:" Grid.Row="10" Grid.Column="0" Margin="0,10,0,10" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtAddress" Grid.Row="10" Grid.Column="1" Margin="0,10,0,10"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="11" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button x:Name="btnSave" Content="Lưu" Width="80" Margin="0,0,10,0" Click="btnSave_Click"/>
+            <Button x:Name="btnCancel" Content="Huỷ" Width="80" Click="btnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,53 @@
+﻿<Window x:Class="DentalClinic.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" Background="#ecf0f1"
+        ResizeMode="NoResize">
+    <Grid>
+        <!-- Giao diện nền mờ đẹp -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#2980b9" Offset="0.0" />
+                <GradientStop Color="#6dd5fa" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Khung đăng nhập bo góc, đổ bóng -->
+        <Border Background="White" Width="400" Height="400" CornerRadius="15"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Padding="30"
+                >
+            <StackPanel>
+                <!-- Tiêu đề -->
+                <TextBlock Text="Login" FontSize="28" FontWeight="Bold"
+                           Foreground="#2c3e50" HorizontalAlignment="Center" Margin="0,0,0,20" />
+
+                <!-- Username -->
+                <TextBlock Text="Username" FontWeight="SemiBold" Foreground="#34495e"/>
+                <DockPanel Margin="0,5,0,15">
+                    <Image Source="https://img.icons8.com/ios-filled/50/000000/user.png"
+                           Width="20" Height="20" Margin="0,0,10,0" />
+                    <TextBox x:Name="txtUsername" Height="35" Width="300"
+                             Background="#f0f3f4" BorderBrush="#bdc3c7" Padding="5" />
+                </DockPanel>
+
+                <!-- Password -->
+                <TextBlock Text="Password" FontWeight="SemiBold" Foreground="#34495e"/>
+                <DockPanel Margin="0,5,0,20">
+                    <Image Source="https://img.icons8.com/ios-filled/50/000000/lock.png"
+                           Width="20" Height="20" Margin="0,0,10,0" />
+                    <PasswordBox x:Name="txtPassword" Height="35" Width="300"
+                                 Background="#f0f3f4" BorderBrush="#bdc3c7" Padding="5" />
+                </DockPanel>
+
+                <!-- Nút đăng nhập và thoát -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="btnLogin" Content="Login" Width="120" Height="40" Margin="10,0"
+                            Background="#27ae60" Foreground="White" FontWeight="Bold"
+                        BorderThickness="0" Cursor="Hand" Click="btnLogin_Click"
+                            Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

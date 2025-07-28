@@ -1,0 +1,64 @@
+﻿<Window x:Class="DentalClinic.AddServiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Thêm dịch vụ mới"
+        Height="400"
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        Background="#F9F9F9">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Tiêu đề -->
+        <TextBlock Text="➕ Thêm dịch vụ mới"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Foreground="#2C3E50"
+                   HorizontalAlignment="Center"
+                   Margin="0 0 0 20"/>
+
+        <!-- Nội dung form -->
+        <StackPanel Grid.Row="1" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Tên dịch vụ:" FontWeight="Bold"/>
+                <TextBox x:Name="txtServiceName" Height="30" FontSize="14"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Mô tả:" FontWeight="Bold"/>
+                <TextBox x:Name="txtDescription" Height="60" FontSize="14" TextWrapping="Wrap" AcceptsReturn="True"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Giá tiền (VNĐ):" FontWeight="Bold"/>
+                <TextBox x:Name="txtPrice" Height="30" FontSize="14"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Nút -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+            <Button Content="💾 Lưu"
+                    Width="100"
+                    Height="35"
+                    FontWeight="Bold"
+                    Background="#27AE60"
+                    Foreground="White"
+                    BorderBrush="#1E8449"
+                    Margin="0,0,10,0"
+                    Click="btnSave_Click"/>
+
+            <Button Content="❌ Hủy"
+                    Width="80"
+                    Height="35"
+                    FontWeight="Bold"
+                    Background="#E74C3C"
+                    Foreground="White"
+                    BorderBrush="#C0392B"
+                    Click="btnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

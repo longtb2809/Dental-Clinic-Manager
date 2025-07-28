@@ -1,0 +1,97 @@
+﻿<Window x:Class="DentalClinic.CreateTreatmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tạo hồ sơ điều trị" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Thông tin hồ sơ -->
+            <RowDefinition Height="Auto"/>
+            <!-- Chi tiết điều trị -->
+            <RowDefinition Height="*"/>
+            <!-- Danh sách -->
+            <RowDefinition Height="Auto"/>
+            <!-- Nút -->
+        </Grid.RowDefinitions>
+
+        <!-- Thông tin hồ sơ -->
+        <GroupBox Header="Thông tin hồ sơ điều trị" Grid.Row="0" Margin="0,0,0,10">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Bệnh nhân:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                <ComboBox x:Name="cbPatient" DisplayMemberPath="DisplayName" SelectedValuePath="PatientId"
+                          Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Bác sĩ:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                <ComboBox x:Name="cbDoctor" DisplayMemberPath="FullName" SelectedValuePath="UserId"
+                          Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Ngày bắt đầu:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+                <DatePicker x:Name="dpStartDate" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Ngày kết thúc:" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"/>
+                <DatePicker x:Name="dpEndDate" Grid.Row="2" Grid.Column="3" Margin="5"/>
+
+                <Label Content="Ghi chú:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtNote" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Margin="5"/>
+            </Grid>
+        </GroupBox>
+
+        <!-- Chi tiết điều trị -->
+        <GroupBox Header="Chi tiết điều trị" Grid.Row="1" Margin="0,0,0,10">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Dịch vụ:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                <ComboBox x:Name="cbService" DisplayMemberPath="ServiceName" SelectedValuePath="ServiceId"
+                          Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Ngày điều trị:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                <DatePicker x:Name="dpTreatmentDate" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Vị trí răng:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtTooth" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Mô tả chi tiết:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtDescription" Grid.Row="3" Grid.Column="1" Height="60" TextWrapping="Wrap" AcceptsReturn="True" Margin="5"/>
+
+                <Button x:Name="btnAddDetail" Content="➕ Thêm chi tiết điều trị" Grid.Row="4" Grid.Column="1"
+                        HorizontalAlignment="Right" Margin="5" Click="BtnAddDetail_Click"/>
+            </Grid>
+        </GroupBox>
+
+        <!-- Danh sách chi tiết đã thêm -->
+        <GroupBox Header="Danh sách chi tiết đã thêm" Grid.Row="2" Margin="0,0,0,10">
+            <ListBox x:Name="lbDetails" Margin="10"/>
+        </GroupBox>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnSaveTreatment" Content="💾 Lưu hồ sơ điều trị" Click="BtnSaveTreatment_Click"
+                    Width="150" Margin="0,0,10,0"/>
+            <Button x:Name="btnClose" Content="❌ Đóng" Click="BtnClose_Click" Width="100"/>
+        </StackPanel>
+    </Grid>
+</Window>

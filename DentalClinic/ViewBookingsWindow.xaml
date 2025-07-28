@@ -1,0 +1,36 @@
+﻿<Window x:Class="DentalClinic.ViewBookingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lịch đặt khám" Height="600" Width="950"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="📋 Lịch đặt khám" FontSize="22" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <DataGrid x:Name="dgBookings"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã đặt" Binding="{Binding AppointmentId}" Width="60"/>
+                <DataGridTextColumn Header="Bệnh nhân" Binding="{Binding PatientName}" Width="200"/>
+                <DataGridTextColumn Header="Ngày đặt" Binding="{Binding AppointmentDate}" Width="150"/>
+                <DataGridTextColumn Header="Trạng thái" Binding="{Binding Status}" Width="120"/>
+                <DataGridTextColumn Header="Ghi chú" Binding="{Binding Note}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Nút thao tác -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button x:Name="btnViews" Content="🔍 Chi tiết" Width="100" Margin="5" Click="btnViews_Click"/>
+            <Button Content="❌ Thoát" Width="80" Margin="5" Click="BtnClose_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
